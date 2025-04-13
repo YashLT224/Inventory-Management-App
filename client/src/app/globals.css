@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
 *,
 *::before,
@@ -13,6 +13,34 @@ body,
   height:100%;
   width:100%;
   @apply text-sm;
-  @apply bg-gray-500;
-  @apply text-gray-900;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  @apply text-sm;
+}
+
+  */
+
+
+@import "tailwindcss";
+@media (prefers-color-scheme: dark) {
+  /* Remove or override any conflicting dark styles here */
+  body {
+    background-color: #fff !important; /* Overriding default background-color for dark mode */
+  }
 }

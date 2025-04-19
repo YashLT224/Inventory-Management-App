@@ -44,3 +44,16 @@ body,
     background-color: #fff !important; /* Overriding default background-color for dark mode */
   }
 }
+
+
+@media(min-width:768px){
+  .custom-grid-rows{
+    grid-template-rows:repeat(8,20vh);
+  }
+}
+
+@media(min-width:1280){
+  .custom-grid-rows{
+    grid-template-rows:repeat(8,7.5vh);
+  }
+}

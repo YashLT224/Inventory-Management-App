@@ -8,6 +8,13 @@ export interface Product {
     stockQuantity: number;
   }
 
+  export interface  NewProduct{
+    name: string;
+    price: number;
+    rating?: number;
+    stockQuantity: number;
+  }
+
   export interface SalesSummary {
     salesSummaryId: string;
     totalValue: number;
@@ -66,8 +73,20 @@ export const api=createApi({
                 params:search?{search}:{}
             }),
             providesTags: ["Products"],
+        }),
+        createProduct:build.mutation<Product,NewProduct>({
+          query:(newProduct)=>({
+            url:'/products',
+            method:'POST',
+            body:newProduct
+          }),
+          invalidatesTags:['Products']
+        }),
+        getUsers:build.query<User[],void>({
+            query:()=>'/users',
+            providesTags:['Users']
         })
     }),
 })
 
-export const {useGetDashboardMetricsQuery,useGetProductsQuery}=api;
+export const {useGetDashboardMetricsQuery,useGetProductsQuery,useCreateProductMutation,useGetUsersQuery}=api;

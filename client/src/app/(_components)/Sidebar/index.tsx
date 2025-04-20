@@ -101,15 +101,9 @@ const Sidebar = () => {
           isCollapsed={isSidebarCollapsed}
         />
         <SidebarLink
-          href="/sales"
-          icon={CircleDollarSign}
-          label="Sales"
-          isCollapsed={isSidebarCollapsed}
-        />
-        <SidebarLink
-          href="/reports"
+          href="/products"
           icon={Clipboard}
-          label="Reports"
+          label="Products"
           isCollapsed={isSidebarCollapsed}
         />
         <SidebarLink
@@ -118,12 +112,19 @@ const Sidebar = () => {
           label="Users"
           isCollapsed={isSidebarCollapsed}
         />
+          <SidebarLink
+          href="/expenses"
+          icon={CircleDollarSign}
+          label="Expenses"
+          isCollapsed={isSidebarCollapsed}
+        />
         <SidebarLink
           href="/settings"
           icon={SlidersHorizontal}
           label="Settings"
           isCollapsed={isSidebarCollapsed}
         />
+
       </div>
       <div className="flex-grow mt-8">{/* links */}</div>
       {/* Footer */}

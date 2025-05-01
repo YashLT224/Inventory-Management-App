@@ -13,7 +13,7 @@ import {
 import { useAppSelector, useAppDispatch } from "../../redux";
 import { setIsSidebarCollapsed } from "../../../state";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 type SideBarLinksProps = {

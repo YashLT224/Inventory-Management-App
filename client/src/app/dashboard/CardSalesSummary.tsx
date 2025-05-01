@@ -11,6 +11,12 @@ import {
   YAxis,
 } from "recharts";
 
+interface SalesData {
+  totalValue: number;
+  date: string;
+  changePercentage?: number;
+}
+
 const CardSalesSummary = () => {
   const { data, isLoading, isError } = useGetDashboardMetricsQuery();
   const salesData = data?.salesSummary || [];
@@ -26,7 +32,7 @@ const CardSalesSummary = () => {
 
   const highestValueData = salesData.reduce((acc, curr) => {
     return acc.totalValue > curr.totalValue ? acc : curr;
-  }, salesData[0] || {});
+  }, salesData[0] || { totalValue: 0, date: '' } as SalesData);
 
   const highestValueDate = highestValueData.date
     ? new Date(highestValueData.date).toLocaleDateString("en-US", {

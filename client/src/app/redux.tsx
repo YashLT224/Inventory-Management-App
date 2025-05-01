@@ -12,13 +12,13 @@ import {api} from '../state/api'
 //The createNoopStorage function is a fallback for server-side rendering where localStorage isn't available
 const createNoopStorage = () => {
   return {  
-    getItem(_key: string) {
+    getItem() {
       return Promise.resolve(null);
     },
-    setItem(_key: string, value: any) {
+    setItem(_key: string, value) {
       return Promise.resolve(value);
     },
-    removeItem(_key: string) {
+    removeItem() {
       return Promise.resolve();
     }
   };

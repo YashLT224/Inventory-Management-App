@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Menu, Bell, Sun, Settings,Moon } from "lucide-react";
-// import Image from "next/image";
+ import Image from "next/image";
 import Link from "next/link";
 import { useAppSelector, useAppDispatch } from "../../redux";
 import { setIsSidebarCollapsed,setIsDarkMode } from "../../../state";

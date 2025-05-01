@@ -1,6 +1,6 @@
 import React from "react";
 import { useGetDashboardMetricsQuery } from "@/state/api";
-// import Image from "next/image";
+import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
 import Rating from "../(_components)/Rating";
 
@@ -18,15 +18,15 @@ const CardPopularProducts = () => {
             {dashboardMetrics?.popularProducts.map((product)=>(
                 <div key={product.productId} className="flex items-center justify-between gap-3 px-5 py-7 border-b">
                     <div className="flex items-center gap-3">
-                    {/* <Image
-                    src={`https://s3-inventorymanagement.s3.us-east-2.amazonaws.com/product${
+                    <Image
+                    src={`https://s3-inventory-management-bucket-assets.s3.us-east-1.amazonaws.com/product${
                       Math.floor(Math.random() * 3) + 1
                     }.png`}
                     alt={product.name}
                     width={48}
                     height={48}
                     className="rounded-lg w-14 h-14"
-                  /> */}
+                  />
                   <div className="flex flex-col justify-between gap-1">
                   <div className="font-bold text-gray-700">
                       {product.name}

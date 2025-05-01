@@ -13,7 +13,7 @@ import {
 import { useAppSelector, useAppDispatch } from "../../redux";
 import { setIsSidebarCollapsed } from "../../../state";
 import { usePathname } from "next/navigation";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 type SideBarLinksProps = {
@@ -70,8 +70,17 @@ const Sidebar = () => {
   return (
     <div className={sidebarClassNames}>
       {/* {TOP LOGO} */}
-      <div className="flex gap-3 justify-between md:justify-normal items-center pt-8">
-        <div>logo</div>
+      <div className={`flex gap-3 justify-between md:justify-normal items-center pt-8 ${
+          isSidebarCollapsed ? "px-5" : "px-8"
+        }`}>
+        <Image
+          src="https://s3-inventory-management-bucket-assets.s3.us-east-1.amazonaws.com/logo.png"
+          alt="edstock-logo"
+          width={27}
+          height={27}
+          className="rounded w-8"
+        />
+        
         <h1
           className={`${
             isSidebarCollapsed ? "hidden" : "block"

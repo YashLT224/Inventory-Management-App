@@ -52,7 +52,7 @@ export const makeStore=()=>{
             serializableCheck: {
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
               },
-         }).concat(api.middleware)
+         }).concat(api.middleware) as any
     })
 }
 
@@ -60,7 +60,7 @@ export const makeStore=()=>{
 /* REDUX TYPES */
 
 export type AppStore=ReturnType<typeof makeStore>;
-export type RootState=ReturnType<AppStore['getState']>;
+export type RootState=ReturnType<AppStore['getState']> & { _persist: { version: number; rehydrated: boolean } };
 export type AppDispatch=AppStore['dispatch'];
 export const useAppDispatch=()=>useDispatch<AppDispatch>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

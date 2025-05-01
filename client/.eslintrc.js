@@ -1,5 +1,6 @@
 module.exports = {
     // ...other existing configuration
+    extends: ['next', 'next/core-web-vitals', 'eslint:recommended', 'plugin:@typescript-eslint/recommended'],
     rules: {
       // Disable unused variables warning/error
       '@typescript-eslint/no-unused-vars': 'off',
